@@ -66,8 +66,8 @@ class ReweightProcessor(processor.ProcessorABC):
         del mask
 
         # Build TLorentzVectors
-        p4s_e = vector.Array(ak.zip({"pt": electrons.pt, "eta": electrons.eta, "phi": electrons.phi, "mass": 0*electrons.pt}))
-        p4s_mu = vector.Array(ak.zip({"pt": muons.pt, "eta": muons.eta, "phi": muons.phi, "mass": 0*muons.pt}))
+        p4s_e = vector.zip({"pt": electrons.pt, "eta": electrons.eta, "phi": electrons.phi, "mass": 0*electrons.pt})
+        p4s_mu = vector.zip({"pt": muons.pt, "eta": muons.eta, "phi": muons.phi, "mass": 0*muons.pt})
         e1, e2 = p4s_e[:,0], p4s_e[:,1]
         mu1, mu2 = p4s_mu[:,0], p4s_mu[:,1]
 
@@ -77,19 +77,31 @@ class ReweightProcessor(processor.ProcessorABC):
 
         # Boost to Higgs rest frame
         boostvec = -higgs.to_beta3()
-        e1_boost = e1.boost_p4(boostvec)
-        mu1_boost = mu1.boost_p4(boostvec)
+        boostvec_4D = vector.zip({"x": boostvec.x, "y": boostvec.y, "z": boostvec.z, "t": 1.0})
+        e1_boost = e1.boost_p4(boostvec_4D)
+        mu1_boost = mu1.boost_p4(boostvec_4D)
+        z1_boost = z1.boost_p4(boostvec_4D)
+        z2_boost = z2.boost_p4(boostvec_4D)
 
-        z1_boost = z1.boost_p4(boostvec)
-        z2_boost = z2.boost_p4(boostvec)
-
+        # Boost to Higgs rest frame
+        boostvec_higgs = -higgs.to_beta3()
+        boostvec_higgs_4D = vector.zip({"x": boostvec_higgs.x, "y": boostvec_higgs.y, "z": boostvec_higgs.z, "t": 1.0})
+        e1_boost = e1.boost_p4(boostvec_higgs_4D)
+        mu1_boost = mu1.boost_p4(boostvec_higgs_4D)
+        z1_boost = z1.boost_p4(boostvec_higgs_4D)
+        z2_boost = z2.boost_p4(boostvec_higgs_4D)
+        
         # Boost each lepton into Z rest frames
-        e1_final = e1_boost.boost_p4(-z1_boost.to_beta3())
-        mu1_final = mu1_boost.boost_p4(-z2_boost.to_beta3())
+        boostvec_z1 = -z1_boost.to_beta3()
+        boostvec_z1_4D = vector.zip({"x": boostvec_z1.x, "y": boostvec_z1.y, "z": boostvec_z1.z, "t": 1.0})
+        e1_final = e1_boost.boost_p4(boostvec_z1_4D)
+        boostvec_z2 = -z2_boost.to_beta3()
+        boostvec_z2_4D = vector.zip({"x": boostvec_z2.x, "y": boostvec_z2.y, "z": boostvec_z2.z, "t": 1.0})
+        mu1_final = mu1_boost.boost_p4(boostvec_z2_4D)
 
         # Compute angles
-        theta1 = z1_boost.angle(e1_final)
-        theta2 = (-z2_boost).angle(mu1_final)
+        theta1 = z1_boost.deltaangle(e1_final)
+        theta2 = (-z2_boost).deltaangle(mu1_final)
 
         # Define phi angles (azimuths)
         phi1 = e1_final.phi
