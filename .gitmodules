@@ -1,0 +1,3 @@
+[submodule "polar/ExRootAnalysis"]
+	path = polar/ExRootAnalysis
+	url = https://github.com/mg5amcnlo/ExRootAnalysis/
