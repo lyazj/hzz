@@ -142,6 +142,5 @@ class ReweightProcessor(processor.ProcessorABC):
     def postprocess(self, accumulator):
         return accumulator
 
-# Example usage:
-# events = NanoEventsFactory.from_root('h2zz.root', treepath='LHEF').events()
-# output = ReweightProcessor().process(events)
+events = NanoEventsFactory.from_root('forran_additional.root', treepath='LHEF').events()
+output = ReweightProcessor().process(events)
