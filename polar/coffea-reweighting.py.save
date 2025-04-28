@@ -53,23 +53,32 @@ def Aint_ppmm(theta1, phi1, theta2, phi2, P1, P2, K):
 
 class ReweightProcessor(processor.ProcessorABC):
     def process(self, events):
-        # Replace custom 'Particle' branch with NanoAOD-compatible LHEPart branch
-        particles = events.LHEPart
+        # Assume 'Particle' branches (custom LHE-like)
+        particles = events.Particle
 
         # Select leptons (electrons/muons)
-        electrons = particles[abs(particles.pdgId) == 11]
-        muons = particles[abs(particles.pdgId) == 13]
-        del particles
-        mask = (ak.num(electrons) == 2) & (ak.num(muons) == 2)
-        electrons = electrons[mask]
-        muons = muons[mask]
-        del mask
+        is_lepton = (abs(particles.PID) == 11) | (abs(particles.PID) == 13)
+        leptons = particles[is_lepton]
+
+        # Random choice of dominant lepton
+        indices = ak.local_index(leptons.pt)
+        rand_idx = ak.Array(random.choices(range(4), k=len(leptons)))
+        dominate = leptons[rand_idx]
+
+        # Pairing
+        mothers = leptons.Mother1
+        def pairing(leptons, dominate_idx):
+            dominate_mother = leptons[dominate_idx].Mother1
+            ids = ak.local_index(leptons)
+            z1 = ids[leptons.Mother1 == dominate_mother]
+            z2 = ids[leptons.Mother1 != dominate_mother]
+            return (z1[0], z1[1], z2[0], z2[1])
+
+        z1_l1_idx, z1_l2_idx, z2_l1_idx, z2_l2_idx = ak.unzip([pairing(leptons, i) for i in rand_idx])
 
         # Build TLorentzVectors
-        p4s_e = vector.Array(ak.zip({"pt": electrons.pt, "eta": electrons.eta, "phi": electrons.phi, "mass": 0*electrons.pt}))
-        p4s_mu = vector.Array(ak.zip({"pt": muons.pt, "eta": muons.eta, "phi": muons.phi, "mass": 0*muons.pt}))
-        e1, e2 = p4s_e[:,0], p4s_e[:,1]
-        mu1, mu2 = p4s_mu[:,0], p4s_mu[:,1]
+        lep = vector.awkward.zip({"pt": leptons.pt, "eta": leptons.eta, "phi": leptons.phi, "mass": 0*leptons.pt})
+        e1, e2, mu1, mu2 = lep[z1_l1_idx], lep[z1_l2_idx], lep[z2_l1_idx], lep[z2_l2_idx]
 
         z1 = e1 + e2
         z2 = mu1 + mu2
