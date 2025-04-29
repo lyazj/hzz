@@ -92,14 +92,11 @@ double Aint_ppmm(float theta1, float phi1, float theta2, float phi2, double P1, 
 
 #pragma GCC diagnostic pop
 
-int Reweight()
+void Reweight(TString filename = "for_ran_jhugen_0p3m_2e2mu.root")
 {
   gSystem->Load("ExRootAnalysis/libExRootAnalysis.so");
-  //gSystem->Load("libPhysics");
-  TString filepath = "root/";
-  TString filename = "h2zz.root";
   ROOT::EnableImplicitMT();
-  ROOT::RDataFrame df_sig("LHEF", filepath + filename);
+  ROOT::RDataFrame df_sig("LHEF", filename);
 
   auto df_sig_boost =
       df_sig
@@ -319,7 +316,5 @@ int Reweight()
                                },
                                { "angle" });
 
-  df_sig_weight.Snapshot("tree", "./test_" + filename);
-
-  return 0;
+  df_sig_weight.Snapshot("tree", "reweight_" + filename);
 }
