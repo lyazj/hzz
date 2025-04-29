@@ -76,14 +76,6 @@ class ReweightProcessor(processor.ProcessorABC):
         higgs = z1 + z2
 
         # Boost to Higgs rest frame
-        boostvec = -higgs.to_beta3()
-        boostvec_4D = vector.zip({"x": boostvec.x, "y": boostvec.y, "z": boostvec.z, "t": 1.0})
-        e1_boost = e1.boost_p4(boostvec_4D)
-        mu1_boost = mu1.boost_p4(boostvec_4D)
-        z1_boost = z1.boost_p4(boostvec_4D)
-        z2_boost = z2.boost_p4(boostvec_4D)
-
-        # Boost to Higgs rest frame
         boostvec_higgs = -higgs.to_beta3()
         boostvec_higgs_4D = vector.zip({"x": boostvec_higgs.x, "y": boostvec_higgs.y, "z": boostvec_higgs.z, "t": 1.0})
         e1_boost = e1.boost_p4(boostvec_higgs_4D)
