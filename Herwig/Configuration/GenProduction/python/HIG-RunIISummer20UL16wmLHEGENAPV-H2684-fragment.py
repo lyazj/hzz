@@ -14,39 +14,44 @@ externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
 #    gg_H_ZZ_quark-mass-effects_NNPDF31_13TeV_M125.input
 # https://raw.githubusercontent.com/cms-sw/genproductions/fd7d34a91c3160348fd0446ded445fa28f555e09/bin/JHUGen/cards/decay/ZZ4l_withtaus.input
 
-import FWCore.ParameterSet.Config as cms
-from Configuration.Generator.Pythia8CommonSettings_cfi import *
-from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
-from Configuration.Generator.Pythia8PowhegEmissionVetoSettings_cfi import *
-from Configuration.Generator.PSweightsPythia.PythiaPSweightsSettings_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7LHECommonSettings_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7StableParticlesForDetector_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7CH3TuneSettings_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7LHEPowhegSettings_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7PSWeightsSettings_cfi import *
+from Configuration.Generator.Herwig7Settings.Herwig7_7p1SettingsFor7p2_cfi import *
 
-generator = cms.EDFilter("Pythia8ConcurrentHadronizerFilter",
-                         maxEventsToPrint = cms.untracked.int32(1),
-                         pythiaPylistVerbosity = cms.untracked.int32(1),
-                         filterEfficiency = cms.untracked.double(1.0),
-                         pythiaHepMCVerbosity = cms.untracked.bool(False),
-                         comEnergy = cms.double(13000.),
-                         PythiaParameters = cms.PSet(
-        pythia8CommonSettingsBlock,
-        pythia8CP5SettingsBlock,
-        pythia8PowhegEmissionVetoSettingsBlock,
-        pythia8PSweightsSettingsBlock,
-        processParameters = cms.vstring(
-            'POWHEG:nFinal = 1',   ## Number of final state particles
-                                   ## (BEFORE THE DECAYS) in the LHE
-                                   ## other than emitted extra parton
-          ),
-        parameterSets = cms.vstring('pythia8CommonSettings',
-                                    'pythia8CP5Settings',
-                                    'pythia8PowhegEmissionVetoSettings',
-                                    'pythia8PSweightsSettings',
-                                    'processParameters'
-                                    )
-        )
-                         )
-
-ProductionFilterSequence = cms.Sequence(generator)
-
-
-# Link to generator fragment:
-# https://raw.githubusercontent.com/cms-sw/genproductions/7d0525c9f6633a9ee00d4e79162d82e369250ccc/python/ThirteenTeV/Hadronizer/Hadronizer_TuneCP5_13TeV_powhegEmissionVeto_1p_LHE_pythia8_cff.py
+generator = cms.EDFilter("Herwig7GeneratorFilter",
+    herwig7LHECommonSettingsBlock,
+    herwig7LHEPowhegSettingsBlock,
+    herwig7p1SettingsFor7p2Block,
+    herwig7StableParticlesForDetectorBlock,
+    herwig7PSWeightsSettingsBlock,
+    herwig7CH3SettingsBlock,
+    configFiles = cms.vstring(),
+    crossSection = cms.untracked.double(-1),
+    dataLocation = cms.string('${HERWIGPATH:-6}'),
+    eventHandlers = cms.string('/Herwig/EventHandlers'),
+    filterEfficiency = cms.untracked.double(1.0),
+    generatorModule = cms.string('/Herwig/Generators/EventGenerator'),
+    hw_user_settings = cms.vstring(
+        'cd /Herwig/EventHandlers',
+        'set EventHandler:LuminosityFunction:Energy 13000*GeV',
+        'cd /',
+        'set /Herwig/Particles/h0:NominalMass 125.0'
+    ),
+    parameterSets = cms.vstring(
+        'hw_lhe_common_settings',
+        'hw_lhe_powheg_settings',
+        'hw_7p1SettingsFor7p2',
+        'herwig7CH3PDF',
+        'herwig7CH3AlphaS',
+        'herwig7CH3MPISettings',
+        'herwig7StableParticlesForDetector',
+        'hw_PSWeights_settings',
+        'hw_user_settings'
+    ),
+    repository = cms.string('${HERWIGPATH}/HerwigDefaults.rpo'),
+    run = cms.string('InterfaceMatchboxTest'),
+    runModeList = cms.untracked.string('read,run'),
+)
