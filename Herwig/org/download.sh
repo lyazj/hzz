@@ -5,4 +5,5 @@ wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-
 wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16RECOAPV-02820 -O 5-HIG-RunIISummer20UL16RECOAPV-02820.sh &
 wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODAPVv2-02465 -O 6-HIG-RunIISummer20UL16MiniAODAPVv2-02465.sh &
 wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODAPVv9-02343 -O 7-HIG-RunIISummer20UL16NanoAODAPVv9-02343.sh &
+wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00200 -O 1-TOP-RunIISummer20UL16wmLHEGENAPV-00200.sh &
 wait
