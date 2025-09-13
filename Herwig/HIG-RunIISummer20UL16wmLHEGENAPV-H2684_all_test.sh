@@ -3,7 +3,7 @@
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 export SCRAM_ARCH=slc7_amd64_gcc700
 [ -z "$1" ] && EVENTS=10 || EVENTS="$1"
-[ -z "$2" ] && UPLOAD="" || UPLOAD="/eos/user/l/legao/NanoAODStore/V0/2016APV/MC/GluGluHToZZTo4L_M125_TuneCP5_13TeV_powheg2_JHUGenV7011_herwig7/HIG-RunIISummer20UL16wmLHEGENAPV-H2684/$2.root"
+[ -z "$2" ] && UPLOAD="" || UPLOAD="/eos/user/l/legao/NanoAODStore/V0/2016APV/MC/GluGluHToZZTo4L_M125_TuneCH3_13TeV_powheg2_JHUGenV7011_herwig7/HIG-RunIISummer20UL16wmLHEGENAPV-H2684/$2.root"
 echo "Events: ${EVENTS}"
 echo "Upload: ${UPLOAD}"
 
