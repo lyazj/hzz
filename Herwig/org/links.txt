@@ -11,5 +11,7 @@ https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunII
 
 https://cms-pdmv-prod.web.cern.ch/mcm/requests?page=0&dataset_name=*powheg*-herwig7&prepid=*20UL16NanoAODAPV*
 https://cms-pdmv-prod.web.cern.ch/mcm/chained_requests?contains=TOP-RunIISummer20UL16NanoAODAPVv9-00215&page=0&shown=15
+https://cms-pdmv-prod.web.cern.ch/mcm/chained_requests?contains=TOP-RunIISummer20UL16NanoAODAPVv9-00318&page=0&shown=15
 
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00200
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00216
