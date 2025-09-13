@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rm -rf hzz
+git clone --branch=main --depth=1 https://github.com/lyazj/hzz hzz
+cd hzz/Herwig
+PROG="$(readlink -f "$1")"
+shift 1
+exec "${PROG}" "$@"

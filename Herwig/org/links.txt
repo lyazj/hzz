@@ -1,0 +1,10 @@
+https://cms-pdmv-prod.web.cern.ch/mcm/requests?page=0&dataset_name=GluGluHToZZTo4L_M125_TuneCP5*&prepid=*16NanoAODAPV*
+https://cms-pdmv-prod.web.cern.ch/mcm/chained_requests?contains=HIG-RunIISummer20UL16NanoAODAPVv9-02343&page=0&shown=15
+
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16wmLHEGENAPV-02684
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16SIMAPV-02820
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16DIGIPremixAPV-02799
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16HLTAPV-02820
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16RECOAPV-02820
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16MiniAODAPVv2-02465
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_setup/HIG-RunIISummer20UL16NanoAODAPVv9-02343
