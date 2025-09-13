@@ -37,7 +37,7 @@ cmsDriver.py  --eventcontent AODSIM --customise Configuration/DataProcessing/Uti
 enter CMSSW_10_6_25
 cmsDriver.py  --eventcontent MINIAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier MINIAODSIM --conditions 106X_mcRun2_asymptotic_preVFP_v11 --step PAT --procModifiers run2_miniAOD_UL --geometry DB:Extended --era Run2_2016_HIPM --python_filename HIG-RunIISummer20UL16MiniAODAPVv2-02465_1_cfg.py --fileout file:HIG-RunIISummer20UL16MiniAODAPVv2-02465.root --filein file:HIG-RunIISummer20UL16RECOAPV-02820.root --runUnscheduled --mc -n $EVENTS || exit $?
 
-enter CMSSW_10_6_26
-cmsDriver.py  --eventcontent NANOEDMAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_preVFP_v11 --step NANO --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --python_filename HIG-RunIISummer20UL16NanoAODAPVv9-02343_1_cfg.py --fileout file:HIG-RunIISummer20UL16NanoAODAPVv9-02343.root --filein file:HIG-RunIISummer20UL16MiniAODAPVv2-02465.root --mc -n $EVENTS || exit $?
+enter CMSSW_13_2_2
+cmsDriver.py  --eventcontent NANOEDMAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 106X_mcRun2_asymptotic_preVFP_v11 --step NANO --era Run2_2016_HIPM,run2_nanoAOD_106Xv2 --python_filename HIG-RunIISummer20UL16NanoAODAPVv12-02343_1_cfg.py --fileout file:HIG-RunIISummer20UL16NanoAODAPVv12-02343.root --filein file:HIG-RunIISummer20UL16MiniAODAPVv2-02465.root --mc -n $EVENTS || exit $?
 
-[ ! -z "${UPLOAD}" ] && xrdcp -f HIG-RunIISummer20UL16NanoAODAPVv9-02343.root "root://eosuser.cern.ch/${UPLOAD}"
+[ ! -z "${UPLOAD}" ] && xrdcp -f HIG-RunIISummer20UL16NanoAODAPVv12-02343.root "root://eosuser.cern.ch/${UPLOAD}"
