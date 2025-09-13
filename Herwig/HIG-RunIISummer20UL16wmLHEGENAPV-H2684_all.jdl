@@ -4,7 +4,7 @@ Executable = x509run
 
 +ProjectName = "cms.org.cern"
 #+JobFlavour = "tomorrow"
-+MaxRuntime = 172800  # 2 days
++MaxRuntime = 10800
 
 X509UP = x509up
 PROG = HIG-RunIISummer20UL16wmLHEGENAPV-H2684_all.sh
