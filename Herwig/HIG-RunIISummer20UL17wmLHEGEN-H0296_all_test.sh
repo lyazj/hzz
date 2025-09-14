@@ -26,6 +26,7 @@ cmsDriver.py  --eventcontent RAWSIM --customise Configuration/DataProcessing/Uti
 
 enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent PREMIXRAW --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI --conditions 106X_mc2017_realistic_v6 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --geometry DB:Extended --datamix PreMix --era Run2_2017 --python_filename HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17DIGIPremix-00599.root --filein file:HIG-RunIISummer20UL17SIM-00599.root --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX" --runUnscheduled --mc -n $EVENTS --no_exec || exit $?
+./patch_premix_inputs.py HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3.py.patch
 cmsRun HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py || exit $?
 
 enter CMSSW_8_0_36_UL_patch1
