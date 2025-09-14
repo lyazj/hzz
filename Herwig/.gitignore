@@ -3,3 +3,4 @@ hzz/
 *.log
 .dasmaps/
 .mg5/
+__pycache__/
