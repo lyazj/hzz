@@ -18,7 +18,7 @@ enter () {
   cd ../..
 }
 
-enter CMSSW_10_6_18
+enter CMSSW_10_6_28_patch1
 cmsDriver.py Configuration/GenProduction/python/HIG-RunIISummer20UL16wmLHEGEN-H0085-fragment.py --eventcontent RAWSIM,LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN,LHE --conditions 106X_mcRun2_asymptotic_v13 --beamspot Realistic25ns13TeV2016Collision --customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(100)" --step LHE,GEN --geometry DB:Extended --era Run2_2016 --python_filename HIG-RunIISummer20UL16wmLHEGEN-H0085_1_cfg.py --fileout file:HIG-RunIISummer20UL16wmLHEGEN-H0085.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
@@ -28,7 +28,7 @@ enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent PREMIXRAW --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI --conditions 106X_mcRun2_asymptotic_v13 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --geometry DB:Extended --datamix PreMix --era Run2_2016 --python_filename HIG-RunIISummer20UL16DIGIPremix-00496_1_cfg.py --fileout file:HIG-RunIISummer20UL16DIGIPremix-00496.root --filein file:HIG-RunIISummer20UL16SIM-00498.root --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL16_106X_mcRun2_asymptotic_v13-v1/PREMIX" --runUnscheduled --mc -n $EVENTS --no_exec || exit $?
 cmsRun HIG-RunIISummer20UL16DIGIPremix-00496_1_cfg.py || exit $?
 
-enter CMSSW_8_0_33_UL
+enter CMSSW_8_0_36_UL_patch1
 cmsDriver.py  --eventcontent RAWSIM --outputCommand "keep *_mix_*_*,keep *_genPUProtons_*_*" --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-RAW --inputCommands "keep *","drop *_*_BMTF_*","drop *PixelFEDChannel*_*_*_*" --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' --step HLT:25ns15e33_v4 --geometry DB:Extended --era Run2_2016 --python_filename HIG-RunIISummer20UL16HLT-00498_1_cfg.py --fileout file:HIG-RunIISummer20UL16HLT-00498.root --filein file:HIG-RunIISummer20UL16DIGIPremix-00496.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
