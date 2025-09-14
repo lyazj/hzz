@@ -31,6 +31,11 @@ https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunII
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODv2-00490
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODv9-00528
 
+https://cms-pdmv-prod.web.cern.ch/mcm/requests?page=0&dataset_name=*powheg*-herwig7&prepid=*20UL16NanoAODv9*
+https://cms-pdmv-prod.web.cern.ch/mcm/chained_requests?contains=TOP-RunIISummer20UL16NanoAODv9-00095&page=0&shown=15
+
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGEN-00129
+
 *** 2017 ***
 
 https://cms-pdmv-prod.web.cern.ch/mcm/requests?page=0&dataset_name=GluGluHToZZTo4L_M125_TuneCP5*&prepid=*17NanoAODv9*
@@ -43,3 +48,8 @@ https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunII
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17RECO-00599
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17MiniAODv2-00675
 https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17NanoAODv9-00641
+
+https://cms-pdmv-prod.web.cern.ch/mcm/requests?page=0&dataset_name=*powheg*-herwig7&prepid=*20UL17NanoAODv9*
+https://cms-pdmv-prod.web.cern.ch/mcm/chained_requests?contains=TOP-RunIISummer20UL17NanoAODv9-00233&page=0&shown=15
+
+https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL17wmLHEGEN-00196
