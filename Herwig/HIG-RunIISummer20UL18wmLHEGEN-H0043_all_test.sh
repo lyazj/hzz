@@ -39,6 +39,6 @@ enter CMSSW_10_6_20
 cmsDriver.py  --eventcontent MINIAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier MINIAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --step PAT --procModifiers run2_miniAOD_UL --geometry DB:Extended --era Run2_2018 --python_filename HIG-RunIISummer20UL18MiniAODv2-00166_1_cfg.py --fileout file:HIG-RunIISummer20UL18MiniAODv2-00166.root --filein file:HIG-RunIISummer20UL18RECO-00004.root --runUnscheduled --mc -n $EVENTS || exit $?
 
 enter CMSSW_13_2_2
-cmsDriver.py  --eventcontent NANOAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --step NANO --era Run2_2018,run2_nanoAOD_106Xv2 --python_filename HIG-RunIISummer20UL18NanoAODv9-00162_1_cfg.py --fileout file:HIG-RunIISummer20UL18NanoAODv9-00162.root --filein file:HIG-RunIISummer20UL18MiniAODv2-00166.root --mc -n $EVENTS || exit $?
+cmsDriver.py  --eventcontent NANOAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --step NANO --era Run2_2018,run2_nanoAOD_106Xv2 --python_filename HIG-RunIISummer20UL18NanoAODv12-00162_1_cfg.py --fileout file:HIG-RunIISummer20UL18NanoAODv12-00162.root --filein file:HIG-RunIISummer20UL18MiniAODv2-00166.root --mc -n $EVENTS || exit $?
 
-[ ! -z "${UPLOAD}" ] && xrdcp -f file:HIG-RunIISummer20UL18NanoAODv9-00162.root "root://eosuser.cern.ch/${UPLOAD}"
+[ ! -z "${UPLOAD}" ] && xrdcp -f file:HIG-RunIISummer20UL18NanoAODv12-00162.root "root://eosuser.cern.ch/${UPLOAD}"
