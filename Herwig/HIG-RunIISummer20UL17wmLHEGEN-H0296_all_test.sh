@@ -18,7 +18,7 @@ enter () {
   cd ../..
 }
 
-enter CMSSW_10_6_19_patch3
+enter CMSSW_10_6_28_patch1
 cmsDriver.py Configuration/GenProduction/python/HIG-RunIISummer20UL17wmLHEGEN-H0296-fragment.py --eventcontent RAWSIM,LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN,LHE --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision --customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(100)" --step LHE,GEN --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17wmLHEGEN-H0296_1_cfg.py --fileout file:HIG-RunIISummer20UL17wmLHEGEN-H0296.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
@@ -28,13 +28,13 @@ enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent PREMIXRAW --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI --conditions 106X_mc2017_realistic_v6 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --geometry DB:Extended --datamix PreMix --era Run2_2017 --python_filename HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17DIGIPremix-00599.root --filein file:HIG-RunIISummer20UL17SIM-00599.root --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX" --runUnscheduled --mc -n $EVENTS --no_exec || exit $?
 cmsRun HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py || exit $?
 
-enter CMSSW_9_4_14_UL_patch1
+enter CMSSW_8_0_36_UL_patch1
 cmsDriver.py  --eventcontent RAWSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-RAW --conditions 94X_mc2017_realistic_v15 --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' --step HLT:2e34v40 --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17HLT-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17HLT-00599.root --filein file:HIG-RunIISummer20UL17DIGIPremix-00599.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent AODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier AODSIM --conditions 106X_mc2017_realistic_v6 --step RAW2DIGI,L1Reco,RECO,RECOSIM --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17RECO-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17RECO-00599.root --filein file:HIG-RunIISummer20UL17HLT-00599.root --runUnscheduled --mc -n $EVENTS || exit $?
 
-enter CMSSW_10_6_20
+enter CMSSW_10_6_25
 cmsDriver.py  --eventcontent MINIAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier MINIAODSIM --conditions 106X_mc2017_realistic_v9 --step PAT --procModifiers run2_miniAOD_UL --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17MiniAODv2-00675_1_cfg.py --fileout file:HIG-RunIISummer20UL17MiniAODv2-00675.root --filein file:HIG-RunIISummer20UL17RECO-00599.root --runUnscheduled --mc -n $EVENTS || exit $?
 
 enter CMSSW_13_2_2
