@@ -29,13 +29,13 @@ cmsDriver.py  --eventcontent PREMIXRAW --customise Configuration/DataProcessing/
 ./patch_premix_inputs.py HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3.py.patch
 cmsRun HIG-RunIISummer20UL17DIGIPremix-00599_1_cfg.py || exit $?
 
-enter CMSSW_8_0_36_UL_patch1
+enter CMSSW_9_4_14_UL_patch1
 cmsDriver.py  --eventcontent RAWSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-RAW --conditions 94X_mc2017_realistic_v15 --customise_commands 'process.source.bypassVersionCheck = cms.untracked.bool(True)' --step HLT:2e34v40 --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17HLT-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17HLT-00599.root --filein file:HIG-RunIISummer20UL17DIGIPremix-00599.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent AODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier AODSIM --conditions 106X_mc2017_realistic_v6 --step RAW2DIGI,L1Reco,RECO,RECOSIM --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17RECO-00599_1_cfg.py --fileout file:HIG-RunIISummer20UL17RECO-00599.root --filein file:HIG-RunIISummer20UL17HLT-00599.root --runUnscheduled --mc -n $EVENTS || exit $?
 
-enter CMSSW_10_6_25
+enter CMSSW_10_6_20
 cmsDriver.py  --eventcontent MINIAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier MINIAODSIM --conditions 106X_mc2017_realistic_v9 --step PAT --procModifiers run2_miniAOD_UL --geometry DB:Extended --era Run2_2017 --python_filename HIG-RunIISummer20UL17MiniAODv2-00675_1_cfg.py --fileout file:HIG-RunIISummer20UL17MiniAODv2-00675.root --filein file:HIG-RunIISummer20UL17RECO-00599.root --runUnscheduled --mc -n $EVENTS || exit $?
 
 enter CMSSW_13_2_2
