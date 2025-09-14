@@ -1,26 +1,34 @@
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16wmLHEGENAPV-02684 -O 1-HIG-RunIISummer20UL16wmLHEGENAPV-02684.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16SIMAPV-02820 -O 2-HIG-RunIISummer20UL16SIMAPV-02820.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16DIGIPremixAPV-02799 -O 3-HIG-RunIISummer20UL16DIGIPremixAPV-02799.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16HLTAPV-02820 -O 4-HIG-RunIISummer20UL16HLTAPV-02820.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16RECOAPV-02820 -O 5-HIG-RunIISummer20UL16RECOAPV-02820.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODAPVv2-02465 -O 6-HIG-RunIISummer20UL16MiniAODAPVv2-02465.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODAPVv9-02343 -O 7-HIG-RunIISummer20UL16NanoAODAPVv9-02343.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00200 -O 1-TOP-RunIISummer20UL16wmLHEGENAPV-00200.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00216 -O 1-TOP-RunIISummer20UL16wmLHEGENAPV-00216.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16wmLHEGEN-00085 -O 1-HIG-RunIISummer20UL16wmLHEGEN-00085.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16SIM-00498 -O 2-HIG-RunIISummer20UL16SIM-00498.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16DIGIPremix-00496 -O 3-HIG-RunIISummer20UL16DIGIPremix-00496.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16HLT-00498 -O 4-HIG-RunIISummer20UL16HLT-00498.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16RECO-00498 -O 5-HIG-RunIISummer20UL16RECO-00498.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODv2-00490 -O 6-HIG-RunIISummer20UL16MiniAODv2-00490.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODv9-00528 -O 7-HIG-RunIISummer20UL16NanoAODv9-00528.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGEN-00129 -O 1-TOP-RunIISummer20UL16wmLHEGEN-00129.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17wmLHEGEN-00296 -O 1-HIG-RunIISummer20UL17wmLHEGEN-00296.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17SIM-00599 -O 2-HIG-RunIISummer20UL17SIM-00599.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17DIGIPremix-00599 -O 3-HIG-RunIISummer20UL17DIGIPremix-00599.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17HLT-00599 -O 4-HIG-RunIISummer20UL17HLT-00599.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17RECO-00599 -O 5-HIG-RunIISummer20UL17RECO-00599.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17MiniAODv2-00675 -O 6-HIG-RunIISummer20UL17MiniAODv2-00675.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17NanoAODv9-00641 -O 7-HIG-RunIISummer20UL17NanoAODv9-00641.sh &
-wget https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL17wmLHEGEN-00196 -O 1-TOP-RunIISummer20UL17wmLHEGEN-00196.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16wmLHEGENAPV-02684 -O 1-HIG-RunIISummer20UL16wmLHEGENAPV-02684.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16SIMAPV-02820 -O 2-HIG-RunIISummer20UL16SIMAPV-02820.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16DIGIPremixAPV-02799 -O 3-HIG-RunIISummer20UL16DIGIPremixAPV-02799.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16HLTAPV-02820 -O 4-HIG-RunIISummer20UL16HLTAPV-02820.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16RECOAPV-02820 -O 5-HIG-RunIISummer20UL16RECOAPV-02820.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODAPVv2-02465 -O 6-HIG-RunIISummer20UL16MiniAODAPVv2-02465.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODAPVv9-02343 -O 7-HIG-RunIISummer20UL16NanoAODAPVv9-02343.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00200 -O 1-TOP-RunIISummer20UL16wmLHEGENAPV-00200.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGENAPV-00216 -O 1-TOP-RunIISummer20UL16wmLHEGENAPV-00216.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16wmLHEGEN-00085 -O 1-HIG-RunIISummer20UL16wmLHEGEN-00085.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16SIM-00498 -O 2-HIG-RunIISummer20UL16SIM-00498.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16DIGIPremix-00496 -O 3-HIG-RunIISummer20UL16DIGIPremix-00496.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16HLT-00498 -O 4-HIG-RunIISummer20UL16HLT-00498.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16RECO-00498 -O 5-HIG-RunIISummer20UL16RECO-00498.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16MiniAODv2-00490 -O 6-HIG-RunIISummer20UL16MiniAODv2-00490.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL16NanoAODv9-00528 -O 7-HIG-RunIISummer20UL16NanoAODv9-00528.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL16wmLHEGEN-00129 -O 1-TOP-RunIISummer20UL16wmLHEGEN-00129.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17wmLHEGEN-00296 -O 1-HIG-RunIISummer20UL17wmLHEGEN-00296.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17SIM-00599 -O 2-HIG-RunIISummer20UL17SIM-00599.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17DIGIPremix-00599 -O 3-HIG-RunIISummer20UL17DIGIPremix-00599.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17HLT-00599 -O 4-HIG-RunIISummer20UL17HLT-00599.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17RECO-00599 -O 5-HIG-RunIISummer20UL17RECO-00599.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17MiniAODv2-00675 -O 6-HIG-RunIISummer20UL17MiniAODv2-00675.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL17NanoAODv9-00641 -O 7-HIG-RunIISummer20UL17NanoAODv9-00641.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL17wmLHEGEN-00196 -O 1-TOP-RunIISummer20UL17wmLHEGEN-00196.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18wmLHEGEN-00043 -O 1-HIG-RunIISummer20UL18wmLHEGEN-00043.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18SIM-00004 -O 2-HIG-RunIISummer20UL18SIM-00004.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18DIGIPremix-00004 -O 3-HIG-RunIISummer20UL18DIGIPremix-00004.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18HLT-00004 -O 4-HIG-RunIISummer20UL18HLT-00004.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18RECO-00004 -O 5-HIG-RunIISummer20UL18RECO-00004.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18MiniAODv2-00166 -O 6-HIG-RunIISummer20UL18MiniAODv2-00166.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer20UL18NanoAODv9-00162 -O 7-HIG-RunIISummer20UL18NanoAODv9-00162.sh &
+wget -c https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/get_test/TOP-RunIISummer20UL18wmLHEGEN-00197 -O 1-TOP-RunIISummer20UL18wmLHEGEN-00197.sh &
 wait
