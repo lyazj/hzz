@@ -1,26 +1,23 @@
 # vim:ft=conf
 Universe = vanilla
-Executable = x509run
+Executable = shrun
 
 +ProjectName = "cms.org.cern"
 #+JobFlavour = "tomorrow"
 +MaxRuntime = 10800
 
-X509UP = x509up
-PROG = HIG-RunIISummer20UL16wmLHEGEN-H0085_all.sh
-NEVENT = 100
-Arguments = $(X509UP) bootstrap $(PROG) $(NEVENT) $(ProcId)
+PROG = /usr/bin/hadd
+Arguments = $(PROG) -f -k $(FOUT) $(FIN)
 
 request_cpus = 1
 request_memory = 4096
-x509userproxy = $(X509UP)
 
-Log    = log/condor.log
-Output = log/stdout.log
-Error  = log/stderr.log
+Log    = log/merge_condor.log
+Output = log/merge_stdout.log
+Error  = log/merge_stderr.log
 
 should_transfer_files = YES
-transfer_input_files = $(Executable),$(X509UP),bootstrap
+transfer_input_files = $(Executable)
 transfer_output_files = ""
 
 on_exit_remove       = (ExitBySignal == False) && (ExitCode == 0)
@@ -28,4 +25,4 @@ on_exit_hold         = (ExitBySignal == True) || (ExitCode != 0)
 on_exit_hold_reason  = strcat("Job held by ON_EXIT_HOLD due to ", ifThenElse((ExitBySignal == True), strcat("exit signal ", ExitSignal), strcat("exit code ", ExitCode)), ".")
 periodic_release     = (NumJobStarts < 3) && ((CurrentTime - EnteredCurrentStatus) > 60*60)
 
-Queue 10000
+Queue FOUT FIN from merge.txt
