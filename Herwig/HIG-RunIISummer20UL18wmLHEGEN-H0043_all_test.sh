@@ -41,4 +41,4 @@ cmsDriver.py  --eventcontent MINIAODSIM --customise Configuration/DataProcessing
 enter CMSSW_13_2_2
 cmsDriver.py  --eventcontent NANOAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --conditions 106X_upgrade2018_realistic_v16_L1v1 --step NANO --era Run2_2018,run2_nanoAOD_106Xv2 --python_filename HIG-RunIISummer20UL18NanoAODv12-00162_1_cfg.py --fileout file:HIG-RunIISummer20UL18NanoAODv12-00162.root --filein file:HIG-RunIISummer20UL18MiniAODv2-00166.root --mc -n $EVENTS || exit $?
 
-[ ! -z "${UPLOAD}" ] && xrdcp -f file:HIG-RunIISummer20UL18NanoAODv12-00162.root "root://eosuser.cern.ch/${UPLOAD}"
+[ ! -z "${UPLOAD}" ] && xrdcp -f HIG-RunIISummer20UL18NanoAODv12-00162.root "root://eosuser.cern.ch/${UPLOAD}"
