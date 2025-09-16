@@ -19,7 +19,7 @@ enter () {
 }
 
 enter CMSSW_10_6_28_patch1
-cmsDriver.py Configuration/GenProduction/python/HIG-RunIISummer20UL16wmLHEGEN-H0085-fragment.py --eventcontent RAWSIM,LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN,LHE --conditions 106X_mcRun2_asymptotic_v13 --beamspot Realistic25ns13TeV2016Collision --customise_commands process.source.numberEventsInLuminosityBlock="cms.untracked.uint32(100)" --step LHE,GEN --geometry DB:Extended --era Run2_2016 --python_filename HIG-RunIISummer20UL16wmLHEGEN-H0085_1_cfg.py --fileout file:HIG-RunIISummer20UL16wmLHEGEN-H0085.root --mc -n $EVENTS || exit $?
+cmsDriver.py Configuration/GenProduction/python/HIG-RunIISummer20UL16wmLHEGEN-H0085-fragment.py --eventcontent RAWSIM,LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN,LHE --conditions 106X_mcRun2_asymptotic_v13 --beamspot Realistic25ns13TeV2016Collision --customise_commands 'process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=int('$[$2+1]')\nprocess.source.numberEventsInLuminosityBlock=cms.untracked.uint32(100)' --step LHE,GEN --geometry DB:Extended --era Run2_2016 --python_filename HIG-RunIISummer20UL16wmLHEGEN-H0085_1_cfg.py --fileout file:HIG-RunIISummer20UL16wmLHEGEN-H0085.root --mc -n $EVENTS || exit $?
 
 enter CMSSW_10_6_17_patch1
 cmsDriver.py  --eventcontent RAWSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions 106X_mcRun2_asymptotic_v13 --beamspot Realistic25ns13TeV2016Collision --step SIM --geometry DB:Extended --era Run2_2016 --python_filename HIG-RunIISummer20UL16SIM-00498_1_cfg.py --fileout file:HIG-RunIISummer20UL16SIM-00498.root --filein file:HIG-RunIISummer20UL16wmLHEGEN-H0085.root --runUnscheduled --mc -n $EVENTS || exit $?
